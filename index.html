@@ -8,15 +8,43 @@
     <title>Bookmark landing page</title>
   </head>
   <body>
+    <header class="header">
+      <div class="overlay has-fade"></div>
+      <nav class="container container--pall flex flex-jc-sb flex-ai-c">
+        <a href="#" class="header__logo">
+          <img src="./images/logo-bookmark.svg" alt="Bookmark" />
+        </a>
+        <a href="#" class="header__toggle hide-for-desktop">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+        <div class="header__links hide-for-mobile">
+          <a href="#">Features</a><a href="#">Pricing</a><a href="#">Contact</a
+          ><a href="#" class="button">Login</a>
+        </div>
+      </nav>
+      <div class="header__menu grid has-fade">
+        <div class="header__menu__links">
+          <a href="#">Features</a>
+          <a href="#">Pricing</a>
+          <a href="#">Contact</a>
+          <a href="#" class="button">Login</a>
+        </div>
+        <div class="header__menu__social">
+          <a href="#">
+            <img src="./images/icon-facebook.svg" alt="facebook" />
+          </a>
+          <a href="#">
+            <img src="./images/icon-twitter.svg" alt="twitter" />
+          </a>
+        </div>
+      </div>
+    </header>
     <!--
-  Features
-  Pricing
-  Contact
-  Login
-
   A Simple Bookmark Manager
 
-  A clean and simple interface to organize your favourite websites. Open a new 
+  A clean and simple interface to organize your favorite websites. Open a new 
   browser tab and see your sites load instantly. Try it for free.
 
   Get it on Chrome
