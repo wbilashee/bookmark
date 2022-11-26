@@ -63,7 +63,7 @@ button,
 
 .button {
   color: white;
-  font-weight: 500;
+  font-weight: 400;
   border-radius: 5px;
   font-size: 0.875rem;
   background: $softBlue;
@@ -136,6 +136,10 @@ button,
 
   &-ai-c {
     align-items: center;
+  }
+
+  &-ji-c {
+    justify-items: center;
   }
 }
 

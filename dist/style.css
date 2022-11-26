@@ -102,7 +102,7 @@ button,
 
 .button {
   color: white;
-  font-weight: 500;
+  font-weight: 400;
   border-radius: 5px;
   font-size: 0.875rem;
   background: hsl(231deg, 69%, 60%);
@@ -165,6 +165,9 @@ button,
 }
 .grid-ai-c {
   align-items: center;
+}
+.grid-ji-c {
+  justify-items: center;
 }
 
 .flex {
@@ -367,6 +370,7 @@ button,
 .hero__buttons .button {
   padding: 0.75rem;
   font-size: 0.75rem;
+  font-weight: 500;
 }
 @media (min-width: 40em) {
   .hero__buttons .button {
@@ -405,7 +409,7 @@ button,
   width: 100%;
   margin: 2.5rem auto;
   flex-direction: column;
-  border-bottom: 1px solid hsl(229deg, 8%, 60%);
+  border-bottom: 1px solid #e8eaf6;
 }
 @media (min-width: 64em) {
   .features .feature__buttons {
@@ -421,8 +425,9 @@ button,
   font-size: 1.05rem;
   margin-bottom: -1px;
   color: hsl(229deg, 8%, 60%);
-  border-top: 1px solid hsl(229deg, 8%, 60%);
+  border-top: 1px solid #e8eaf6;
   border-bottom: 4px solid transparent;
+  transition: color 300ms ease-in-out;
 }
 @media (min-width: 64em) {
   .features .feature__buttons .tab-btn {
@@ -430,6 +435,9 @@ button,
     padding: 1.5rem 0;
     border-top: none;
   }
+}
+.features .feature__buttons .tab-btn:not(.active):hover {
+  color: hsl(0deg, 94%, 66%);
 }
 .features .feature__buttons .tab-btn.active {
   color: hsl(229deg, 31%, 21%);
@@ -470,4 +478,70 @@ button,
   .features .feature__content__text p {
     margin: 1.5rem 0 2rem;
   }
+}
+
+.download__container {
+  margin: 3rem auto;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 40em) {
+  .download__container {
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 64em) {
+  .download__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.download__card {
+  width: 17rem;
+  overflow: hidden;
+  text-align: center;
+  padding: 3rem 0 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(166, 173, 201, 0.2);
+}
+.download__card:nth-child(2) {
+  margin-top: 3rem;
+}
+@media (min-width: 64em) {
+  .download__card:nth-child(2) {
+    margin-top: 4rem;
+  }
+}
+.download__card:nth-child(3) {
+  margin-top: 3rem;
+}
+@media (min-width: 64em) {
+  .download__card:nth-child(3) {
+    margin-top: 8rem;
+  }
+}
+.download__card h4 {
+  font-size: 1.25rem;
+  margin: 1.5rem 0 0;
+}
+.download__card p {
+  font-size: 0.9375rem;
+  margin: 0.5rem 0 4rem;
+}
+.download__card .button {
+  position: relative;
+  font-size: 0.9375rem;
+  border-radius: 0.3rem;
+  padding: 0.675rem 1.75rem;
+  border: 2px solid transparent;
+}
+.download__card .button::before {
+  content: url("../images/bg-dots.svg");
+  position: absolute;
+  top: -2.375rem;
+  left: -2.25rem;
+}
+.download__card .button:hover {
+  color: hsl(231deg, 69%, 60%);
+  background: white;
+  border: 2px solid hsl(231deg, 69%, 60%);
 }/*# sourceMappingURL=style.css.map */

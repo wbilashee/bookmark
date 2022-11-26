@@ -1,0 +1,72 @@
+.download {
+  &__container {
+    margin: 3rem auto;
+    grid-template-columns: 1fr;
+
+    @include breakpoint-up(medium) {
+      margin: auto;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    width: 17rem;
+    overflow: hidden;
+    text-align: center;
+    padding: 3rem 0 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+      0 15px 40px rgba(166, 173, 201, 0.2);
+
+    &:nth-child(2) {
+      margin-top: 3rem;
+
+      @include breakpoint-up(large) {
+        margin-top: 4rem;
+      }
+    }
+
+    &:nth-child(3) {
+      margin-top: 3rem;
+
+      @include breakpoint-up(large) {
+        margin-top: 8rem;
+      }
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      margin: 1.5rem 0 0;
+    }
+
+    p {
+      font-size: 0.9375rem;
+      margin: 0.5rem 0 4rem;
+    }
+
+    .button {
+      position: relative;
+      font-size: 0.9375rem;
+      border-radius: 0.3rem;
+      padding: 0.675rem 1.75rem;
+      border: 2px solid transparent;
+
+      &::before {
+        content: url("../images/bg-dots.svg");
+        position: absolute;
+        top: -2.375rem;
+        left: -2.25rem;
+      }
+
+      &:hover {
+        color: $softBlue;
+        background: white;
+        border: 2px solid $softBlue;
+      }
+    }
+  }
+}

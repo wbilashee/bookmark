@@ -6,7 +6,7 @@
       width: 100%;
       margin: 2.5rem auto;
       flex-direction: column;
-      border-bottom: 1px solid $grayishBlue;
+      border-bottom: 1px solid #e8eaf6;
 
       @include breakpoint-up(large) {
         width: 62.5%;
@@ -21,13 +21,18 @@
         font-size: 1.05rem;
         margin-bottom: -1px;
         color: $grayishBlue;
-        border-top: 1px solid $grayishBlue;
+        border-top: 1px solid #e8eaf6;
         border-bottom: 4px solid transparent;
+        transition: color 300ms ease-in-out;
 
         @include breakpoint-up(large) {
           width: 33.33%;
           padding: 1.5rem 0;
           border-top: none;
+        }
+
+        &:not(.active):hover {
+          color: $softRed;
         }
 
         &.active {
