@@ -1,0 +1,80 @@
+.features {
+  margin: 3rem auto;
+
+  .feature {
+    &__buttons {
+      width: 100%;
+      margin: 2.5rem auto;
+      flex-direction: column;
+      border-bottom: 1px solid $grayishBlue;
+
+      @include breakpoint-up(large) {
+        width: 62.5%;
+        flex-direction: row;
+      }
+
+      .tab-btn {
+        border: 0;
+        width: 100%;
+        padding: 1rem 0;
+        background: none;
+        font-size: 1.05rem;
+        margin-bottom: -1px;
+        color: $grayishBlue;
+        border-top: 1px solid $grayishBlue;
+        border-bottom: 4px solid transparent;
+
+        @include breakpoint-up(large) {
+          width: 33.33%;
+          padding: 1.5rem 0;
+          border-top: none;
+        }
+
+        &.active {
+          color: $veryDarkBlue;
+          border-bottom: 4px solid $softRed;
+        }
+      }
+    }
+
+    &__content {
+      display: none;
+      margin: 4.5rem auto;
+      grid-template-columns: 1fr;
+      row-gap: 3rem;
+
+      @include breakpoint-up(large) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      &.active {
+        display: grid;
+      }
+
+      &__image {
+        img {
+          width: 100%;
+        }
+      }
+
+      &__text {
+        width: auto;
+        justify-self: end;
+        text-align: center;
+
+        @include breakpoint-up(large) {
+          width: 80%;
+          text-align: left;
+        }
+
+        p {
+          margin: 1rem 0 0;
+
+          @include breakpoint-up(large) {
+            margin: 1.5rem 0 2rem;
+          }
+        }
+      }
+    }
+  }
+}
