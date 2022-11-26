@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
 .has-fade {
   visibility: hidden;
@@ -544,4 +545,109 @@ button,
   color: hsl(231deg, 69%, 60%);
   background: white;
   border: 2px solid hsl(231deg, 69%, 60%);
+}
+
+.faq {
+  margin: 5rem auto;
+  /* Accordion styles */
+}
+.faq input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.faq .row {
+  display: flex;
+  margin: 1rem auto 4rem;
+}
+@media (min-width: 64em) {
+  .faq .row {
+    margin: 3rem auto 4rem;
+  }
+}
+.faq .row .col {
+  flex: 1;
+}
+.faq .row .col:last-child {
+  margin-left: 1.5em;
+  margin-right: 1.3em;
+}
+@media (min-width: 64em) {
+  .faq .row .col:last-child {
+    margin-left: 1em;
+    margin-right: 0;
+  }
+}
+.faq .tabs {
+  border-radius: 8px;
+  overflow: hidden;
+}
+.faq .tab {
+  margin: auto;
+  overflow: hidden;
+  max-width: 40rem;
+  color: hsl(229deg, 31%, 21%);
+  border-top: 1px solid lightgray;
+}
+.faq .tab:last-child {
+  border-bottom: 1px solid lightgray;
+}
+.faq .tab-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0px 1em 3px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  /* Icon */
+}
+@media (min-width: 64em) {
+  .faq .tab-label {
+    font-size: 1.125rem;
+    padding: 1em;
+  }
+}
+.faq .tab-label:hover {
+  color: hsl(0deg, 94%, 66%);
+}
+.faq .tab-label::after {
+  content: "❯";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.35s;
+  transform: rotate(90deg);
+  color: hsl(231deg, 69%, 60%);
+}
+.faq .tab-content {
+  max-height: 0;
+  padding: 0 1em;
+  line-height: 2;
+  font-size: 1rem;
+  color: hsl(229deg, 8%, 60%);
+  transition: all 0.35s;
+}
+.faq .tab-close {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  font-size: 0.75em;
+  cursor: pointer;
+}
+.faq input:checked + .tab-label {
+  border-bottom: 1px solid lightgray;
+}
+.faq input:checked + .tab-label::after {
+  transform: rotate(-90deg);
+  color: hsl(0deg, 94%, 66%);
+}
+.faq input:checked ~ .tab-content {
+  max-height: 100vh;
+  padding: 2em 1em;
+}
+.faq .button {
+  width: 7rem;
+  margin: auto;
+  display: block;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
