@@ -265,6 +265,7 @@ button,
   padding: 0.6rem;
   box-shadow: none;
   font-weight: 400;
+  background: none;
   margin-top: 1.65rem;
   border: 2px solid white;
 }
@@ -693,30 +694,79 @@ button,
 }
 @media (min-width: 64em) {
   .contact__form {
-    width: 30%;
+    width: 30rem;
     flex-direction: row;
   }
 }
-.contact__form input {
+.contact__form .input__wrapper {
   width: 90%;
+  position: relative;
+  margin-bottom: 1rem;
+}
+@media (min-width: 64em) {
+  .contact__form .input__wrapper {
+    width: 70%;
+    margin-bottom: 0;
+  }
+}
+.contact__form .input__wrapper.error {
+  margin-bottom: 3rem;
+}
+@media (min-width: 64em) {
+  .contact__form .input__wrapper.error {
+    margin-bottom: 0;
+  }
+}
+.contact__form .input__wrapper input {
+  width: 100%;
   border: none;
   outline: none;
   font-size: 1rem;
   border-radius: 5px;
-  padding: 0.875rem 1.125rem;
+  font-family: inherit;
+  padding: 0.825rem 1.125rem;
+  border: 2px solid transparent;
 }
-@media (min-width: 64em) {
-  .contact__form input {
-    width: 67.5%;
-  }
+.contact__form .input__wrapper input.invalid {
+  border: 2px solid hsl(0deg, 94%, 66%);
 }
-.contact__form input::placeholder {
+.contact__form .input__wrapper input::placeholder {
   color: hsl(229deg, 8%, 60%);
-  font-family: "Rubik", sans-serif;
+}
+.contact__form .input__wrapper svg {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 30%;
+}
+.contact__form .input__wrapper svg .icon-error {
+  display: none;
+}
+.contact__form .input__wrapper svg .icon-error.active {
+  fill: hsl(0deg, 94%, 66%);
+  display: block;
+  position: absolute;
+}
+.contact__form .input__wrapper .error {
+  position: absolute;
+  bottom: -3.375rem;
+  left: 0px;
+  width: 100%;
+  display: none;
+  color: white;
+  text-align: left;
+  height: 2.1875rem;
+  font-size: 0.75rem;
+  font-style: italic;
+  margin: 0 0 1.5rem 0;
+  background: hsl(0deg, 94%, 66%);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 0 5px 5px;
+}
+.contact__form .input__wrapper .error.active {
+  display: block;
 }
 .contact__form .button {
   width: 90%;
-  margin-top: 1rem;
   border-radius: 5px;
   background: hsl(0deg, 94%, 66%);
   padding: 0.825rem 1.25rem;
@@ -725,7 +775,6 @@ button,
 @media (min-width: 64em) {
   .contact__form .button {
     width: auto;
-    margin-top: 0;
   }
 }
 .contact__form .button:hover {

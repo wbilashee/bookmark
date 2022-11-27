@@ -6,20 +6,20 @@ const navToggler = document.querySelector(".header__toggle");
 
 navToggler.addEventListener("click", () => {
     if (header.classList.contains("open")) {
-        body.classList.remove("no-scroll");
-        header.classList.remove("open");
+        removeClass(body, "no-scroll");
+        removeClass(header, "open");
         logo.setAttribute("src", "./images/logo-bookmark.svg");
         fadeItems.forEach(elem => {
-            elem.classList.remove("fade-in");
-            elem.classList.add("fade-out");
+            removeClass(elem, "fade-in");
+            addClass(elem, "fade-out");
         });
     } else {
-        body.classList.add("no-scroll");
-        header.classList.add("open");
+        addClass(body, "no-scroll");
+        addClass(header, "open");
         logo.setAttribute("src", "./images/logo-white.svg");
         fadeItems.forEach(elem => {
-            elem.classList.remove("fade-out");
-            elem.classList.add("fade-in");
+            removeClass(elem, "fade-out");
+            addClass(elem, "fade-in");
         });
     }
 });
@@ -33,13 +33,53 @@ feature.addEventListener("click", function (e) {
     const id = e.target.dataset.id;
     if (id) {
         buttons.forEach(function (btn) {
-            btn.classList.remove("active");
+            removeClass(btn, "active");
         });
         e.target.classList.add("active");
         contents.forEach(function (content) {
-            content.classList.remove("active");
+            removeClass(content, "active");
         });
         const element = document.getElementById(id);
-        element.classList.add("active");
+        addClass(element, "active");
     }
 });
+
+// Links
+const links = document.querySelectorAll("a[href='#']");
+links.forEach(link => link.addEventListener("click", (e) => {
+    e.preventDefault();
+}));
+
+const form = document.querySelector(".contact__form");
+const email = document.querySelector("#email");
+const error = document.querySelector(".error");
+const errorIcon = document.querySelector(".icon-error");
+const inputWrapper = document.querySelector(".input__wrapper");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const value = email.value;
+
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) === false) {
+        addClass(error, "active");
+        addClass(email, "invalid");
+        addClass(errorIcon, "active");
+        addClass(inputWrapper, "error");
+        error.setAttribute("role", "alert");
+    } else {
+        email.value = "";
+        error.removeAttribute("role");
+        removeClass(error, "active");
+        removeClass(email, "invalid");
+        removeClass(errorIcon, "active");
+        removeClass(inputWrapper, "error");
+    }
+});
+
+function addClass(element, className) {
+    element.classList.add(className);
+}
+
+function removeClass(element, className) {
+    element.classList.remove(className);
+}

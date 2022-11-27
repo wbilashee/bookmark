@@ -38,31 +38,87 @@
     flex-direction: column;
 
     @include breakpoint-up(large) {
-      width: 30%;
+      width: 30rem;
       flex-direction: row;
     }
 
-    input {
+    .input__wrapper {
       width: 90%;
-      border: none;
-      outline: none;
-      font-size: 1rem;
-      border-radius: 5px;
-      padding: 0.875rem 1.125rem;
+      position: relative;
+      margin-bottom: 1rem;
 
       @include breakpoint-up(large) {
-        width: 67.5%;
+        width: 70%;
+        margin-bottom: 0;
       }
 
-      &::placeholder {
-        color: $grayishBlue;
-        font-family: "Rubik", sans-serif;
+      &.error {
+        margin-bottom: 3rem;
+
+        @include breakpoint-up(large) {
+          margin-bottom: 0;
+        }
+      }
+
+      input {
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        border-radius: 5px;
+        font-family: inherit;
+        padding: 0.825rem 1.125rem;
+        border: 2px solid transparent;
+
+        &.invalid {
+          border: 2px solid $softRed;
+        }
+
+        &::placeholder {
+          color: $grayishBlue;
+        }
+      }
+
+      svg {
+        position: absolute;
+        right: 1.25rem;
+        bottom: 30%;
+
+        .icon-error {
+          display: none;
+
+          &.active {
+            fill: $softRed;
+            display: block;
+            position: absolute;
+          }
+        }
+      }
+
+      .error {
+        position: absolute;
+        bottom: -3.375rem;
+        left: 0px;
+        width: 100%;
+        display: none;
+        color: white;
+        text-align: left;
+        height: 2.1875rem;
+        font-size: 0.75rem;
+        font-style: italic;
+        margin: 0 0 1.5rem 0;
+        background: $softRed;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0 0 5px 5px;
+
+        &.active {
+          display: block;
+        }
       }
     }
 
     .button {
       width: 90%;
-      margin-top: 1rem;
       border-radius: 5px;
       background: $softRed;
       padding: 0.825rem 1.25rem;
@@ -70,7 +126,6 @@
 
       @include breakpoint-up(large) {
         width: auto;
-        margin-top: 0;
       }
 
       &:hover {
