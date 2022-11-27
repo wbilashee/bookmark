@@ -1,0 +1,90 @@
+.footer {
+  background: $veryDarkBlue;
+
+  &__container {
+    padding-top: 3rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    flex-direction: column;
+
+    @include breakpoint-up(large) {
+      text-align: left;
+      padding-top: 2rem;
+      flex-direction: row;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 1rem;
+
+    @include breakpoint-up(large) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__links {
+    margin: 0 0 1rem 0;
+
+    @include breakpoint-up(large) {
+      margin: 0 auto 0 4rem;
+    }
+
+    a {
+      display: block;
+      color: white;
+      padding: 1rem 0;
+      font-size: 0.875rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 300ms ease-in-out;
+
+      @include breakpoint-up(large) {
+        display: inline;
+        padding: 0;
+      }
+
+      &:hover {
+        color: $softRed;
+      }
+
+      &:not(:first-child) {
+        margin-left: auto;
+
+        @include breakpoint-up(large) {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+
+  &__social {
+    svg {
+      cursor: pointer;
+
+      path {
+        transition: all 300ms ease-in-out;
+      }
+
+      &:hover {
+        path {
+          fill: $softRed;
+        }
+      }
+    }
+
+    svg:first-child {
+      margin-right: 1.5rem;
+    }
+  }
+
+  .attribution {
+    color: white;
+    text-align: center;
+    font-size: 0.875rem;
+    padding-bottom: 2rem;
+
+    a {
+      color: white;
+    }
+  }
+}

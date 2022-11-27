@@ -732,4 +732,84 @@ button,
   color: hsl(0deg, 94%, 66%);
   background: white;
   border: 2px solid hsl(0deg, 94%, 66%);
+}
+
+.footer {
+  background: hsl(229deg, 31%, 21%);
+}
+.footer__container {
+  padding-top: 3rem;
+  text-align: center;
+  padding-bottom: 2rem;
+  flex-direction: column;
+}
+@media (min-width: 64em) {
+  .footer__container {
+    text-align: left;
+    padding-top: 2rem;
+    flex-direction: row;
+  }
+}
+.footer__logo {
+  margin-bottom: 1rem;
+}
+@media (min-width: 64em) {
+  .footer__logo {
+    margin-bottom: 0;
+  }
+}
+.footer__links {
+  margin: 0 0 1rem 0;
+}
+@media (min-width: 64em) {
+  .footer__links {
+    margin: 0 auto 0 4rem;
+  }
+}
+.footer__links a {
+  display: block;
+  color: white;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 300ms ease-in-out;
+}
+@media (min-width: 64em) {
+  .footer__links a {
+    display: inline;
+    padding: 0;
+  }
+}
+.footer__links a:hover {
+  color: hsl(0deg, 94%, 66%);
+}
+.footer__links a:not(:first-child) {
+  margin-left: auto;
+}
+@media (min-width: 64em) {
+  .footer__links a:not(:first-child) {
+    margin-left: 2rem;
+  }
+}
+.footer__social svg {
+  cursor: pointer;
+}
+.footer__social svg path {
+  transition: all 300ms ease-in-out;
+}
+.footer__social svg:hover path {
+  fill: hsl(0deg, 94%, 66%);
+}
+.footer__social svg:first-child {
+  margin-right: 1.5rem;
+}
+.footer .attribution {
+  color: white;
+  text-align: center;
+  font-size: 0.875rem;
+  padding-bottom: 2rem;
+}
+.footer .attribution a {
+  color: white;
 }/*# sourceMappingURL=style.css.map */
